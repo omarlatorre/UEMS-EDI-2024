@@ -95,6 +95,13 @@ namespace ED
 		nelem--;
 	}
 
+	template <typename Tipo>
+	Tipo ListaSeq<Tipo>::elemento(int pos) throw (logic_error){
+		if ((pos<0) || (pos>ult))
+			throw logic_error("Posição inválida");
+		return vetor[pos];
+	}
+
 	//pesquisa
 	template <typename Tipo>
 	int ListaSeq<Tipo>::pesquisa(const Tipo &el)
@@ -122,7 +129,7 @@ namespace ED
 		if (p > ult) 
 			throw logic_error("Não está na lista");
 
-		for (int i=p; i < ult; i--)
+		for (int i=p; i < ult; i++)
 			vetor[i] = vetor[i+1];
 		ult--;
 		nelem--;
