@@ -19,4 +19,6 @@ int main(int argc, char** argv) {
 	lista.remove_pos(1);
 	cout << "depois de remover o elto na pos = 1 " << endl;
 	lista.imprime();
+	cout << "o elemento na posição pos = 0" << endl;
+	cout << lista.elemento(0) << endl;
 }
